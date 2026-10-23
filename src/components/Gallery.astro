@@ -1,0 +1,16 @@
+---
+import { screen, type App } from '../data/apps';
+interface Props { app: App }
+const { app } = Astro.props;
+---
+<div class:list={['screenshot-gallery', app.color]}>
+  {app.captions.map((caption, i) => (
+    <figure>
+      <button class="screenshot-button" data-lightbox data-src={screen(app, i + 1)} data-caption={`${app.name} — ${caption}`} aria-label={`Enlarge screenshot: ${caption}`}>
+        <img src={screen(app, i + 1)} alt={`${app.name}: ${caption}`} width="720" height="1560" loading="lazy" />
+        <span class="zoom-label" aria-hidden="true">View screenshot ↗</span>
+      </button>
+      <figcaption>{caption}</figcaption>
+    </figure>
+  ))}
+</div>

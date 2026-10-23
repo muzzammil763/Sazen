@@ -1,0 +1,49 @@
+{
+  "budget-ai": {
+    "icon": "Budget-AI/store-listing/google-play/app-icon-512.png",
+    "screens": [
+      "Budget-AI/website/src/assets/screens/android/01.png",
+      "Budget-AI/website/src/assets/screens/android/03.png",
+      "Budget-AI/website/src/assets/screens/android/04.png"
+    ]
+  },
+  "rafeeq": {
+    "icon": "Rafeeq/assets/logo.png",
+    "screens": [
+      "Rafeeq/website/src/assets/screens/home.png",
+      "Rafeeq/website/src/assets/screens/quran.png",
+      "Rafeeq/website/src/assets/screens/prayer-times.png"
+    ]
+  },
+  "99-names": {
+    "icon": "99-Names/website/public/img/logo.png",
+    "screens": [
+      "99-Names/website/public/img/home.webp",
+      "99-Names/website/public/img/rahman.webp",
+      "99-Names/website/public/img/grid.webp"
+    ]
+  },
+  "fm-crafts": {
+    "icon": "FM-CRAFTS/storefront/public/icon-512.png",
+    "screens": [
+      "FM-CRAFTS/storefront/src/assets/screens/home.png",
+      "FM-CRAFTS/storefront/src/assets/screens/red-rose.png",
+      "FM-CRAFTS/storefront/src/assets/screens/crochet.png"
+    ]
+  },
+  "sazen": {
+    "source": "https://play.google.com/store/apps/dev?id=5262989636703605828",
+    "downloaded": "2026-10-23",
+    "icon": "https://play-lh.googleusercontent.com/HWR1A6yhxQDfTYcQ0oXRzRGMURIzPOYujsZkGc-QIvApQK8DyypUv5-CHLHxSVttrg",
+    "banner": "https://play-lh.googleusercontent.com/CVlDAOreiKyzOnMwy6p-hHXHW14X_K9ggOa4j3TOoQDyK4AExAV9XDCCadG-XduJfeZP"
+  },
+  "salahlog": {
+    "source": "https://play.google.com/store/apps/details?id=com.track_prayer",
+    "icon": "https://play-lh.googleusercontent.com/8fyCY0JTs_E_HgckO9NyO09RduvQd1NkNu7dda80yOthOnFLRC-Lo619oAuoq0fmhiPtPxIMIKsisTXvENrd",
+    "screens": [
+      "https://play-lh.googleusercontent.com/2zis0w9BHYDhD2a93NQnM7E5Lf_wm8l9PkRq_GPE_G83sVpu9xLuRZnsVPsF1gzFCN0vkRg6-d89ZNIsrhs9",
+      "https://play-lh.googleusercontent.com/gvVCWI-GEMKHPhSQ4hDTIUmANPgd59piugClR0JcoBGpvP1jOquA4HpJBXL_CzvqxE8meFti1YwQrUbY2w0J2AI",
+      "https://play-lh.googleusercontent.com/gpT-Ee21zCHRG-FhMgjdgB_y596k_ABp7pVNK6OvTts2pifgt0qHOVLhq5TqyjGFtlv2pHKnevMAD8xQ6m_Vlao"
+    ]
+  }
+}

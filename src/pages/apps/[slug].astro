@@ -1,0 +1,20 @@
+---
+import Base from '../../layouts/Base.astro';
+import Gallery from '../../components/Gallery.astro';
+import Arrow from '../../components/Arrow.astro';
+import Play from '../../components/Play.astro';
+import { apps, playUrl, icon, screen } from '../../data/apps';
+export function getStaticPaths() { return apps.map(app => ({params:{slug:app.slug},props:{app}})); }
+const { app } = Astro.props;
+---
+<Base title={`${app.name}${app.slug==='99-names'?' – Asmaul Husna':''} · Sazen`} description={app.description}>
+  <div class="container"><a class="back-link" href="/#apps">← All Sazen apps</a></div>
+  <section class={`container detail-hero ${app.color}`}>
+    <div class="detail-copy"><div class="app-title"><img src={icon(app)} width="64" height="64" alt={`${app.name} icon`} /><div><span class="eyebrow">{app.category}</span><p>{app.name} · {app.subtitle}</p></div></div><h1>{app.headline}</h1><p class="lead">{app.detail}</p><div class="detail-actions"><a class="btn btn-primary" href={playUrl(app)} target="_blank" rel="noopener noreferrer"><Play /> {app.slug === 'budget-ai' ? 'Check Google Play' : `Get ${app.name}`}</a>{app.website.startsWith('https') && <a class="btn btn-ghost" href={app.website} target="_blank" rel="noopener noreferrer">Visit website <Arrow /></a>}</div><p class="detail-note">{app.note}</p></div>
+    <div class="detail-stage"><img src={screen(app)} width="720" height="1560" alt={`${app.name}: ${app.captions[0]}`} fetchpriority="high" /></div>
+  </section>
+  <div class="container feature-strip">{app.features.map(feature=><span><span aria-hidden="true">✦</span> {feature}</span>)}</div>
+  <section class="section container"><div class="section-heading"><div><span class="eyebrow">Inside {app.name}</span><h2>A closer look.</h2></div><p>Real screens from the app.<br />Select a screenshot to explore.</p></div><Gallery app={app} /></section>
+  <section class="detail-support container"><div><h2>Make it part of your day.</h2><p>Find downloads, app support, and privacy information on Google Play.</p></div><a class="btn btn-primary" href={playUrl(app)} target="_blank" rel="noopener noreferrer"><Play /> Open Google Play</a></section>
+  <section class="section container"><span class="eyebrow">More from the family</span><div class="more-apps">{apps.filter(other=>other.slug!==app.slug).map(other=><a href={`/apps/${other.slug}`}><img src={icon(other)} alt="" width="48" height="48" loading="lazy" /><span>{other.name}<small>{other.subtitle}</small></span><Arrow /></a>)}</div></section>
+</Base>
