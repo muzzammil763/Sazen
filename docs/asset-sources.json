@@ -10,7 +10,7 @@
   "rafeeq": {
     "icon": "Rafeeq/assets/logo.png",
     "screens": [
-      "Rafeeq/website/src/assets/screens/home.png",
+      "Rafeeq/website/src/assets/screens/home-light.png",
       "Rafeeq/website/src/assets/screens/quran.png",
       "Rafeeq/website/src/assets/screens/prayer-times.png"
     ]
