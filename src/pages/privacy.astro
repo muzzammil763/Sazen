@@ -1,0 +1,7 @@
+---
+import Base from '../layouts/Base.astro';
+import { apps, playUrl } from '../data/apps';
+---
+<Base title="Website privacy · Sazen" description="Privacy information for the Sazen app collection website.">
+  <article class="container legal-copy"><a class="back-link" href="/">← Back to Sazen</a><span class="eyebrow">Website privacy · 23 October 2026</span><h1>A simple website.<br />A simple policy.</h1><p>This page applies to the Sazen website. Each mobile app has its own privacy policy.</p><h2>What this website collects</h2><p>This is a static website. It does not have accounts, contact forms, advertising, or analytics scripts. It does not set cookies or store your preferences. Fonts and app images are served from this website.</p><h2>Hosting</h2><p>Cloudflare Pages hosts this website. Cloudflare processes connection information, such as IP addresses and request details, to serve and protect the site. See <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer">Cloudflare’s privacy policy</a> for details.</p><h2>App websites and Google Play</h2><p>Links to app websites and Google Play take you to services with their own policies. For information about an app’s data, permissions, support, or deletion options, follow its “App support” and “Data safety” sections on Google Play:</p><ul>{apps.map(app=><li><a href={playUrl(app)} target="_blank" rel="noopener noreferrer">{app.name}{app.slug==='99-names'?' – Asmaul Husna':''}</a></li>)}</ul></article>
+</Base>

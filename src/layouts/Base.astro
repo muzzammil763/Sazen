@@ -1,0 +1,80 @@
+---
+import '../styles/global.css';
+import { apps, developerUrl, description as defaultDescription } from '../data/apps';
+import Arrow from '../components/Arrow.astro';
+interface Props { title?: string; description?: string }
+const { title = 'Sazen, Apps & Games', description = defaultDescription } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#fcfcfa" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#101012" media="(prefers-color-scheme: dark)" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={new URL('/og.png', Astro.site)} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preload" href="/fonts/boldonse.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/google-sans.woff2" as="font" type="font/woff2" crossorigin />
+    <slot name="head" />
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="/" class="brand" aria-label="Sazen home"><img src="/images/sazen-logo.png" width="40" height="40" alt="" /><span>Sazen</span></a>
+        <nav class="desktop-nav" aria-label="Main navigation"><a href="/#apps">Our apps</a><a href="/#about">About Sazen</a><a href="/#questions">Good to know</a></nav>
+        <a class="btn btn-primary header-cta" href={developerUrl} target="_blank" rel="noopener noreferrer">Find us on Google Play <Arrow /></a>
+        <details class="mobile-menu">
+          <summary aria-label="Navigation menu"><span></span><span></span></summary>
+          <nav aria-label="Mobile navigation"><a href="/#apps">Our apps</a><a href="/#about">About Sazen</a><a href="/#questions">Good to know</a><a href={developerUrl} target="_blank" rel="noopener noreferrer">Sazen on Google Play ↗</a></nav>
+        </details>
+      </div>
+    </header>
+    <main id="main"><slot /></main>
+    <footer class="site-footer container">
+      <div class="footer-top">
+        <div><a href="/" class="brand"><img src="/images/sazen-logo.png" width="40" height="40" alt="" /><span>Sazen</span></a><p>Little things. Thoughtfully made.</p></div>
+        <nav aria-label="Our apps"><span class="eyebrow">Explore</span>{apps.map(app => <a href={`/apps/${app.slug}`}>{app.name}{app.slug === '99-names' ? ' · Asmaul Husna' : ''}</a>)}</nav>
+        <nav aria-label="Studio links"><span class="eyebrow">Sazen</span><a href="/#about">About the studio</a><a href={developerUrl} target="_blank" rel="noopener noreferrer">Google Play ↗</a><a href="/#questions">App support</a><a href="/privacy">Website privacy</a></nav>
+      </div>
+      <div class="footer-bottom"><span>© {new Date().getFullYear()} Sazen. Crafted with care.</span><span>Apps for your everyday.</span></div>
+    </footer>
+    <dialog id="screenshot-dialog" aria-labelledby="screenshot-caption">
+      <button class="dialog-close" aria-label="Close screenshot">×</button>
+      <img id="screenshot-image" src="" alt="" />
+      <p id="screenshot-caption"></p>
+    </dialog>
+    <script>
+      const dialog = document.querySelector<HTMLDialogElement>('#screenshot-dialog');
+      const image = document.querySelector<HTMLImageElement>('#screenshot-image');
+      const caption = document.querySelector('#screenshot-caption');
+      document.querySelectorAll<HTMLButtonElement>('[data-lightbox]').forEach(button => {
+        button.addEventListener('click', () => {
+          if (!dialog || !image || !caption) return;
+          image.src = button.dataset.src!;
+          image.alt = button.dataset.caption!;
+          caption.textContent = button.dataset.caption!;
+          dialog.showModal();
+          document.body.style.overflow = 'hidden';
+        });
+      });
+      dialog?.querySelector('button')?.addEventListener('click', () => dialog.close());
+      dialog?.addEventListener('click', event => { if (event.target === dialog) dialog.close(); });
+      dialog?.addEventListener('close', () => { document.body.style.overflow = ''; });
+      document.querySelectorAll<HTMLAnchorElement>('.mobile-menu a').forEach(link => link.addEventListener('click', () => {
+        document.querySelector<HTMLDetailsElement>('.mobile-menu')!.open = false;
+      }));
+    </script>
+  </body>
+</html>

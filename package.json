@@ -1,0 +1,13 @@
+{
+  "name": "sazen-website",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "node scripts/check-site.mjs",
+    "deploy": "npm run build && npm run check && npx wrangler@4 pages deploy dist --project-name sazen --branch master"
+  },
+  "dependencies": { "astro": "^5.18.2", "sharp": "^0.35.5" }
+}
