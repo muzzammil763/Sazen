@@ -51,3 +51,5 @@ Run `npm run build` then `npm run check`. The latter validates all generated loc
 Do not store Cloudflare/GitHub tokens in files. No changes to Budget AI's Flutter app or other sibling projects are needed for site updates.
 
 Store-link verification on 23 October 2026: the four existing app websites returned HTTP 200. Budget AI’s configured Google Play package URL returned HTTP 404, so its CTA says “Check Google Play”; the intended package link is retained, alongside its working website. Confirm publication/region availability in Play Console.
+
+Cloudflare CLI note: Wrangler 4.152 automatically delegates new Pages projects to Workers. The Sazen Pages project was explicitly created with `pages project create sazen --production-branch master --force` to preserve the requested `pages.dev` domain. Routine deployments use the existing project without that flag.

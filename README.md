@@ -44,7 +44,7 @@ npx wrangler@4 login
 npm run deploy
 ```
 
-The deploy script builds and checks the site before uploading `dist/`. No API tokens or environment secrets belong in this repository. Wrangler uses the local authenticated account.
+The deploy script builds and checks the site before uploading `dist/`. The existing `sazen` Pages project is already created. For a new Pages project, use `npx wrangler@4 pages project create NAME --production-branch master --force`: current Wrangler otherwise delegates new project creation to Workers and returns a `workers.dev` address. The flag is only needed at creation. No API tokens or environment secrets belong in this repository. Wrangler uses the local authenticated account.
 
 For a different Pages project, change the deploy script's `--project-name` and set `SITE_URL` at build time (or change the default in `astro.config.mjs`). Canonical links, social links, sitemap and robots all derive from that origin. Alternative project names, if ever needed: `sazen-apps`, `sazen-studio`, `madebysazen`; their availability must be checked with Cloudflare.
 
