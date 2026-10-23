@@ -16,6 +16,8 @@ Matches Budget AI's marketing stack and visual vocabulary: locally hosted Boldon
 
 99 Names and Asmaul Husna are one app. The local `asmaul_husna` folder contains build artifacts for the `99-Names` project. Budget AI is included as requested even though the developer page fetched on 23 October 2026 listed only the other four apps. Its package URL comes from Budget AI's own website source.
 
+The hero displays full phone frames directly on the page background, without the clipping backdrop or bottom badge.
+
 All five apps have icons, three full screenshots, a Google Play link, and an individual page. The collection has category filters; app pages have a keyboard-accessible screenshot dialog. The homepage includes Sazen's official banner, studio introduction, FAQs, and support links. `/privacy` explains website-only privacy; each app's store listing remains the source for its own policies. Content and navigation work without JavaScript; filters and image enlargement enhance the page when JavaScript is available.
 
 ## Development

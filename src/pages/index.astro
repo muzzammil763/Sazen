@@ -18,10 +18,8 @@ const schema = {'@context':'https://schema.org','@type':'Organization',name:'Saz
       <div class="hero-note"><div class="icon-stack">{apps.map(app => <img src={icon(app)} alt="" width="32" height="32" />)}</div><span>Five apps. One thoughtful family.</span></div>
     </div>
     <div class="hero-stage" aria-label="A preview of the Sazen app family">
-      <span class="stage-orbit orbit-one" aria-hidden="true"></span><span class="stage-orbit orbit-two" aria-hidden="true"></span>
       <span class="stage-label top-label"><span class="tiny-star">✦</span> Made for your everyday</span>
       <div class="hero-phones">{heroApps.map((app,i) => <a href={`#${app.slug}`} class={`hero-phone phone-${i}`} aria-label={`Explore ${app.name}`}><img src={screen(app)} alt={`${app.name} app home screen`} width="720" height="1560" fetchpriority={i===1 ? 'high' : 'auto'} /></a>)}</div>
-      <span class="stage-label bottom-label"><img src="/images/sazen-logo.png" alt="" width="28" height="28" /> Different apps. The same care.</span>
       <span class="stage-spark spark-one" aria-hidden="true">✦</span><span class="stage-spark spark-two" aria-hidden="true">✳</span>
     </div>
   </section>

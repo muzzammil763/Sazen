@@ -28,7 +28,7 @@ The site is a static Astro build without framework hydration, server APIs, or th
 
 ## Experience
 
-The home hero shows three real app screens and all five app icons. The collection includes Rafeeq, Budget AI, 99 Names – Asmaul Husna, FM Crafts, and SalahLog. Category filters use buttons with pressed states and a live result count. They are hidden until JavaScript initializes, so the full catalog remains available without scripts. Following an app anchor after filtering reveals that app again.
+The home hero shows three real app screens and all five app icons. The phone composition scales proportionally on the page background, with complete frames visible at every breakpoint. It has no colored clipping backdrop, orbit rings, or bottom badge covering the screens. The collection includes Rafeeq, Budget AI, 99 Names – Asmaul Husna, FM Crafts, and SalahLog. Category filters use buttons with pressed states and a live result count. They are hidden until JavaScript initializes, so the full catalog remains available without scripts. Following an app anchor after filtering reveals that app again.
 
 Every card links to an individual Sazen page, the exact Google Play package URL and its app website. SalahLog uses `/apps/salahlog` as its website. Each individual page has feature highlights, three full screenshot images, an accessible enlargement dialog, download/support links, and links to the other four apps. Mobile galleries scroll horizontally without creating page overflow.
 

@@ -6,6 +6,7 @@ Read `docs/agents/site.md` before changing structure, app content, visuals, or d
 
 ## Rules
 
+- Keep the hero phone frames fully visible on the page background, without a clipping backdrop or a bottom badge over the screens.
 - Match Budget AI's website typography and aesthetic while retaining the actual Sazen logo and banner.
 - Reuse real app icons/screenshots and keep their sources in `docs/asset-sources.json`; do not invent app screens, ratings, download counts, testimonials, or product claims.
 - 99 Names and Asmaul Husna are one app, package `com.muzamil.asmaulhusna`.
